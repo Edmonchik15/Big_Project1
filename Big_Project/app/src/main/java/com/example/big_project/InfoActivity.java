@@ -7,10 +7,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity4 extends AppCompatActivity {
+public class InfoActivity extends AppCompatActivity {
 
     TextView Text_What;
 
@@ -20,7 +19,7 @@ public class MainActivity4 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.infoactivity);
 
         Text_What = findViewById(R.id.Text_What);
         Image_What = findViewById(R.id.Image_What);
@@ -28,7 +27,7 @@ public class MainActivity4 extends AppCompatActivity {
         Text_What.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity4.this,MainActivity5.class);
+                Intent intent = new Intent(InfoActivity.this, Info1Activity.class);
                 startActivity(intent);
             }
         });

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/info"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InfoActivity"
+    android:padding="16dp"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:id="@+id/Text_What"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:text="Այս ծրագիրը մարդկանց կյանգը ավելի ապահով դարձնելու համար է,որպիսզի կարոանանք հետևել մեր առողջությանը։                                    This App is to make people's lives safer so that we can monitor our health."
+            android:textSize="25dp"/>
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:id="@+id/Text_What1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:text="Creator: Edmon Qocharyan"
+            android:textSize="25dp"/>
+
+    </LinearLayout>
+</RelativeLayout>

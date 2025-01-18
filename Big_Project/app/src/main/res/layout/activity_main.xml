@@ -5,86 +5,29 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:gravity="center"
+    android:background="@drawable/background"
     android:padding="16dp"
-    android:background="@drawable/log_in_background">
+    tools:context=".MainActivity">
 
+    <Button
+        android:text="'"
+        android:id="@+id/Image_1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="5sp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#DED7D7"
+        android:drawableBottom="@drawable/settings_image" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/Image_accaunt"
-            android:layout_width="160dp"
-            android:layout_height="160dp"
-            android:src="@drawable/icon_account_circle"/>
-        
-        <EditText
-            android:id="@+id/username_input"
-            android:layout_marginTop="32dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Username (Must contain the letter a)"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textSize="20sp"
-            android:background="@drawable/rounder_corner"
-            android:padding="18dp"
-            android:inputType="text"/>
-
-        <EditText
-            android:id="@+id/password_input"
-            android:layout_marginTop="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password(Must contain the number 1)"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textSize="20sp"
-            android:background="@drawable/rounder_corner"
-            android:padding="18dp"
-            android:inputType="textPassword"/>
-
-        <CheckBox
-            android:id="@+id/checkBox1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Male"
-            android:textSize="25dp"/>
-
-        <CheckBox
-            android:id="@+id/checkBox2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Female"
-            android:textSize="25dp"/>
-
-        <Button
-            android:id="@+id/login_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="LogIn"
-            android:backgroundTint="@color/white"
-            android:textColor="#3B84F1"
-            android:padding="18dp"
-            android:layout_marginTop="32dp"
-            android:textSize="20sp"/>
-        
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Social LogIn"
-            android:textSize="18sp"
-            android:textColor="@color/white"
-            android:layout_marginTop="32dp"/>
-
-
-        </LinearLayout>
+    <Button
+        android:text="'"
+        android:id="@+id/Image_2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_toLeftOf="@id/Image_1"
+        android:backgroundTint="#EDE6E6"
+        android:drawableBottom="@drawable/info_image" />
 
 </RelativeLayout>
-
-
