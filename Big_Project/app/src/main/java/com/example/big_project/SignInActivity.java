@@ -3,10 +3,13 @@ package com.example.big_project;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,22 +18,24 @@ public class SignInActivity extends AppCompatActivity {
 
     EditText username;
     EditText password;
-    Button loginButton;
-    CheckBox checkBox1;
+    Button signinButton;
 
-    CheckBox checkBox2;
-    public void onClick(View v) {
-        if (v.getId() == R.id.login_btn) {
-            if (username.getText().toString().contains("a") && password.getText().toString().contains("1")) {
-                Toast.makeText(SignInActivity.this, "LogIn Successful!!!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
-            } else {
-                Toast.makeText(SignInActivity.this, "LogIn Failed!!!", Toast.LENGTH_SHORT).show();
-                Toast.makeText(SignInActivity.this, "Please try again!!!", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
+    ImageView Account_Image;
+
+    TextView Sign_in;
+
+    ImageView show_password;
+
+    TextView forgot_password;
+
+    TextView dont_have_account;
+
+    TextView Sign_Up;
+
+
+    private boolean passwordShowing = false;
+
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,23 +44,41 @@ public class SignInActivity extends AppCompatActivity {
 
         username = findViewById(R.id.username_input);
         password = findViewById(R.id.password_input);
-        checkBox1 = findViewById(R.id.checkBox1);
-        loginButton = findViewById(R.id.login_btn);
-        checkBox2 = findViewById(R.id.checkBox2);
+        signinButton = findViewById(R.id.Sign_In_Btn);
+        Sign_Up = findViewById(R.id.Sign_up);
+        dont_have_account = findViewById(R.id.donthave_accaount);
+        forgot_password = findViewById(R.id.forgot_password);
+        show_password = findViewById(R.id.show_password);
+        Sign_in = findViewById(R.id.sign_in);
+        Account_Image = findViewById(R.id.Image_accaunt);
 
-
-        checkBox1.setOnClickListener(new View.OnClickListener() {
+        show_password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkBox2.setVisibility(View.GONE);
+
+                if(passwordShowing){
+                    passwordShowing = false;
+
+                    password.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    show_password.setImageResource(R.drawable.show_password);
+                } else{
+                    passwordShowing = true;
+
+                    password.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                    show_password.setImageResource(R.drawable.hide_password);
+                }
+                password.setSelection(password.length());
             }
         });
 
-        checkBox2.setOnClickListener(new View.OnClickListener() {
+
+        signinButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkBox1.setVisibility(View.GONE);
+                Intent intent = new Intent(SignInActivity.this,SignUpActivity.class);
+                startActivity(intent);
             }
         });
+
     }
 }
