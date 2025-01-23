@@ -20,17 +20,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:text="Այս ծրագիրը մարդկանց կյանգը ավելի ապահով դարձնելու համար է,որպիսզի կարոանանք հետևել մեր առողջությանը։                                    This App is to make people's lives safer so that we can monitor our health."
+            android:text="Այս ծրագիրը մարդկանց կյանգը ավելի ապահով դարձնելու համար է,որպիսզի կարոանանք հետևել մեր առողջությանը։"
             android:textSize="25dp"/>
 
         <TextView
             android:layout_marginTop="15dp"
-            android:id="@+id/Text_What1"
+            android:id="@+id/Text_What3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:text="Creator: Edmon Qocharyan"
+            android:text="This App is to make people's lives safer so that we can monitor our health."
             android:textSize="25dp"/>
+
+
 
     </LinearLayout>
 </RelativeLayout>

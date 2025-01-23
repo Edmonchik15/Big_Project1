@@ -1,5 +1,6 @@
 package com.example.big_project;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -10,15 +11,16 @@ public class Info1Activity extends AppCompatActivity {
 
     TextView info;
 
-    TextView aftor;
+    TextView info2;
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info1);
 
         info = findViewById(R.id.Text_What);
-        aftor = findViewById(R.id.Text_What1);
+        info2 = findViewById(R.id.Text_What3);
     }
 }

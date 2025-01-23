@@ -3,8 +3,6 @@ package com.example.big_project;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.method.HideReturnsTransformationMethod;
-import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -13,7 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class LogInActivity extends AppCompatActivity {
+public class SignInActivity extends AppCompatActivity {
 
     EditText username;
     EditText password;
@@ -24,12 +22,12 @@ public class LogInActivity extends AppCompatActivity {
     public void onClick(View v) {
         if (v.getId() == R.id.login_btn) {
             if (username.getText().toString().contains("a") && password.getText().toString().contains("1")) {
-                Toast.makeText(LogInActivity.this, "LogIn Successful!!!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignInActivity.this, "LogIn Successful!!!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
             } else {
-                Toast.makeText(LogInActivity.this, "LogIn Failed!!!", Toast.LENGTH_SHORT).show();
-                Toast.makeText(LogInActivity.this, "Please try again!!!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignInActivity.this, "LogIn Failed!!!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignInActivity.this, "Please try again!!!", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -37,7 +35,7 @@ public class LogInActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_signin);
 
         username = findViewById(R.id.username_input);
         password = findViewById(R.id.password_input);
