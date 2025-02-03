@@ -60,31 +60,41 @@ public class SignUpActivity extends AppCompatActivity {
         Sign_in = findViewById(R.id.Sign_in);
         sign_up = findViewById(R.id.sign_up);
 
-        if(passwordShowing){
-            passwordShowing = false;
+        show_password2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(passwordShowing){
+                    passwordShowing = false;
 
-            password_input2.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-            show_password2.setImageResource(R.drawable.show_password);
-        } else{
-            passwordShowing = true;
+                    password_input2.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    show_password2.setImageResource(R.drawable.show_password);
+                } else{
+                    passwordShowing = true;
 
-            password_input2.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-            show_password2.setImageResource(R.drawable.hide_password);
-        }
-        password_input2.setSelection(password_input2.length());
+                    password_input2.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                    show_password2.setImageResource(R.drawable.hide_password);
+                }
+                password_input2.setSelection(password_input2.length());
+            }
+        });
 
-        if(con_passwordShowing){
-            con_passwordShowing = false;
+        confirm_show_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(con_passwordShowing){
+                    con_passwordShowing = false;
 
-            confirm_password_input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-            confirm_show_password.setImageResource(R.drawable.show_password);
-        } else{
-            con_passwordShowing = true;
+                    confirm_password_input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                    confirm_show_password.setImageResource(R.drawable.show_password);
+                } else{
+                    con_passwordShowing = true;
 
-            confirm_password_input.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-            confirm_show_password.setImageResource(R.drawable.hide_password);
-        }
-        confirm_password_input.setSelection(confirm_password_input.length());
+                    confirm_password_input.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                    confirm_show_password.setImageResource(R.drawable.hide_password);
+                }
+                confirm_password_input.setSelection(confirm_password_input.length());
+            }
+        });
 
         Sign_Up_Button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,8 +104,8 @@ public class SignUpActivity extends AppCompatActivity {
                 final String getEmail = email_input.getText().toString();
 
                 Intent intent = new Intent(SignUpActivity.this,OTP_Verification.class);
-                intent.putExtra("mobile",getMobile);
-                intent.putExtra("email",getEmail);
+                intent.putExtra("Mobile",getMobile);
+                intent.putExtra("eEmail",getEmail);
                 startActivity(intent);
             }
         });
@@ -103,7 +113,7 @@ public class SignUpActivity extends AppCompatActivity {
         Sign_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                finish();
             }
         });
     }
