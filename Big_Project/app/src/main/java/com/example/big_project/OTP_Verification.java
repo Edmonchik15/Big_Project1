@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
@@ -27,6 +29,8 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.nio.file.attribute.UserPrincipalLookupService;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 public class OTP_Verification extends AppCompatActivity {
@@ -73,6 +77,7 @@ public class OTP_Verification extends AppCompatActivity {
         final String getEmail = getIntent().getStringExtra("Email");
         final String getMobile = getIntent().getStringExtra("Mobile");
 
+
         otpEmail.setText(getEmail);
         otpMobile.setText(getMobile);
 
@@ -99,8 +104,6 @@ public class OTP_Verification extends AppCompatActivity {
         Verify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
                 final String generateOtp = otpET1.getText().toString()+otpET2.getText().toString()+otpET3.getText().toString()+otpET4.getText().toString();
 
                 if(generateOtp.length() == 4){
